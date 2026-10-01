@@ -196,6 +196,498 @@ a {
 }
 
 
+
+/* ============================================================
+   今後の配信スケジュール
+   ============================================================ */
+
+.stream-schedule {
+  position: fixed;
+
+  top: 40%;
+  left: 24px;
+
+  transform: translateY(-50%);
+
+  width: 280px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e8ef;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px #163c5815;
+
+  z-index: 90;
+}
+
+
+/* 英語見出し */
+.schedule-heading span {
+  color: #3c92ac;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* 日本語見出し */
+.schedule-heading h2 {
+  margin: 4px 0 15px;
+
+  color: #102a43;
+
+  font-size: 16px;
+}
+
+
+/* 1日分 */
+.schedule-item {
+  padding: 10px 0;
+
+  border-top: 1px solid #e4eef3;
+}
+
+
+/* 日付 */
+.schedule-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 4px;
+
+  color: #527084;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* 今日 */
+.schedule-today {
+  padding: 2px 6px;
+
+  background: #dff8fc;
+
+  border-radius: 5px;
+
+  color: #176f89;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+/* 配信内容 */
+.schedule-content {
+  display: flex;
+  gap: 8px;
+
+  font-size: 16px;
+}
+
+
+/* 時刻 */
+.schedule-time {
+  flex: none;
+
+  color: #3c92ac;
+
+  font-weight: 700;
+}
+
+
+/* 配信内容 */
+.schedule-title {
+  color: #102a43;
+}
+
+
+/* 予定なし */
+.schedule-empty {
+  color: #9aabb5;
+
+  font-size: 16px;
+}
+
+
+/* 読み込み中 */
+.schedule-loading {
+  color: #9aabb5;
+
+  font-size: 16px;
+}
+
+
+
+
+
+/* ============================================================
+   右側固定リンク
+   ============================================================ */
+
+.floating-links {
+  position: fixed;
+
+  top: 30%;
+  right: 24px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  z-index: 100;
+}
+
+
+/* 1つのリンク */
+.floating-link-item {
+  position: relative;
+}
+
+
+/* リンクボタン */
+.floating-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 160px;
+  height: 80px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e8ef;
+  border-radius: 10px;
+
+  color: #176f89;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 14px #163c5815;
+}
+
+
+/* ============================================================
+   OGPプレビュー
+   ============================================================ */
+
+.link-preview {
+  position: absolute;
+
+  top: 50%;
+  right: calc(100% + 12px);
+
+  transform:
+    translateY(-50%)
+    translateX(10px);
+
+  width: 400px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e8ef;
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px #163c5830;
+
+  overflow: hidden;
+
+  /* 最初は隠しておく */
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    visibility 0.2s;
+}
+
+
+/* OGP画像 */
+.link-preview img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* OGP下の文字 */
+.link-preview-text {
+  display: flex;
+  flex-direction: column;
+
+  padding: 12px 14px;
+}
+
+
+.link-preview-text strong {
+  color: #102a43;
+
+  font-size: 14px;
+}
+
+
+.link-preview-text span {
+  margin-top: 2px;
+
+  color: #6b7f8d;
+
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   マウスを乗せた時
+   ============================================================ */
+
+.floating-link-item:hover .link-preview {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+
+/* ============================================================
+   18.更新履歴
+   ============================================================ */
+
+.updates {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  background: #fff;
+
+  border: 1px solid #d9e8ef;
+  border-radius: 12px;
+
+  font-size: 14px;
+}
+
+
+/* 最新の更新 */
+.latest-update {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-width: 0;
+  flex: 1;
+
+  padding: 13px 16px;
+}
+
+
+/* UPDATE */
+.update-label {
+  flex: none;
+
+  color: #3c92ac;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+
+/* 日付 */
+.latest-update time {
+  flex: none;
+
+  color: #527084;
+
+  font-size: 13px;
+}
+
+
+/* 更新内容 */
+.latest-update p {
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   「すべて見る」
+   ============================================================ */
+
+.update-history {
+  position: relative;
+
+  flex: none;
+}
+
+
+/* 開閉ボタン */
+.update-history summary {
+  padding: 13px 16px;
+
+  color: #176f89;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+
+/* 標準の三角マークを消す */
+.update-history summary::-webkit-details-marker {
+  display: none;
+}
+
+
+/* ＋ */
+.update-history summary::after {
+  content: " ＋";
+}
+
+
+/* 開いている時 */
+.update-history[open] summary::after {
+  content: " －";
+}
+
+
+/* ============================================================
+   過去の更新履歴
+   ============================================================ */
+
+.old-updates {
+  position: absolute;
+
+  top: 100%;
+  right: 0;
+
+  width: 500px;
+
+  z-index: 10;
+
+  background: #fff;
+
+  border: 1px solid #d9e8ef;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px #163c5820;
+
+  overflow: hidden;
+}
+
+
+/* 1件分 */
+.update-item {
+  display: flex;
+  gap: 20px;
+
+  padding: 13px 16px;
+
+  border-bottom: 1px solid #e4eef3;
+}
+
+
+.update-item:last-child {
+  border-bottom: 0;
+}
+
+
+.update-item time {
+  flex: none;
+
+  color: #3c92ac;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.update-item p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   スマートフォン
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .latest-update {
+    gap: 8px;
+
+    padding: 12px;
+  }
+
+
+  /* スマホではスケジュールを非表示 */
+
+  .stream-schedule {
+  display: none;
+}
+
+
+  /* スマホではUPDATEを非表示 */
+  .update-label {
+    display: none;
+  }
+
+
+  .latest-update time {
+    font-size: 12px;
+  }
+
+
+  .update-history summary {
+    padding: 12px;
+  }
+
+
+  /* 履歴を画面幅に合わせる */
+  .old-updates {
+    position: fixed;
+
+    left: 16px;
+    right: 16px;
+
+    width: auto;
+  }
+
+
+  .update-item {
+    display: block;
+  }
+
+
+  .update-item p {
+    margin-top: 4px;
+  }
+}
+
+
 /* ============================================================
    5. 検索エリア
    ============================================================ */
@@ -203,9 +695,9 @@ a {
 .search-panel {
   padding: 25px;
 
-  background: white;
+  background: rgb(222, 253, 255);
 
-  border: 1px solid #d9e8ef;
+  border: 1px solid #5ffff4;
   border-radius: 20px;
 
   box-shadow: 0 10px 34px #163c5810;
@@ -213,6 +705,7 @@ a {
 
 
 .search-panel > label {
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -257,6 +750,7 @@ a {
   background: transparent;
 
   font: inherit;
+  font-size: 18px;
 }
 
 
